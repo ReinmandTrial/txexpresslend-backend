@@ -78,6 +78,8 @@ Stop: `docker compose down`. Delete everything, including the database: `docker 
 
 ## Where content is edited
 
+A step-by-step guide for editors is in [docs/content-guide.md](docs/content-guide.md).
+
 | What | Where in the admin |
 |---|---|
 | Header, hero with Quick Loan, loan amounts, Get Started block, footer, form messages, lead email | **Site Settings** |
