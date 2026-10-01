@@ -1,0 +1,24 @@
+{
+  "name": "txexpresslend-theme",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.14.0",
+  "engines": {
+    "node": "22.x"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch --mode development",
+    "build": "vite build",
+    "icons": "pnpm run icons:mono && pnpm run icons:multi",
+    "icons:mono": "svgo -f src/assets/icons -o src/assets/icons --config svgo.config.js",
+    "icons:multi": "svgo -f src/assets/icons/multicolor -o src/assets/icons/multicolor --config svgo.multicolor.config.js"
+  },
+  "devDependencies": {
+    "@spiriit/vite-plugin-svg-spritemap": "^7.2.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "svgo": "^4.1.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.0"
+  }
+}

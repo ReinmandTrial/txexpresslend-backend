@@ -1,0 +1,1560 @@
+{
+    "key": "group_txl_builder",
+    "title": "Page Builder",
+    "fields": [
+        {
+            "key": "field_builder_blocks",
+            "label": "Blocks",
+            "name": "blocks",
+            "type": "flexible_content",
+            "button_label": "Add block",
+            "layouts": {
+                "layout_hero": {
+                    "key": "layout_hero",
+                    "name": "hero",
+                    "label": "Hero with Quick Loan",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_builder_hero_msg1",
+                            "label": "",
+                            "name": "",
+                            "type": "message",
+                            "message": "Everything except the title and the text comes from Site Settings → Hero. Leave these fields empty to use the shared texts too. If any title part is filled, all three parts are taken from this block.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0,
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_hero"
+                        },
+                        {
+                            "key": "field_builder_hero_title",
+                            "label": "Title: beginning",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_hero"
+                        },
+                        {
+                            "key": "field_builder_hero_title_accent",
+                            "label": "Title: highlighted part",
+                            "name": "title_accent",
+                            "type": "text",
+                            "instructions": "Shown in orange.",
+                            "required": 0,
+                            "parent_layout": "layout_hero"
+                        },
+                        {
+                            "key": "field_builder_hero_title_after",
+                            "label": "Title: ending",
+                            "name": "title_after",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_hero"
+                        },
+                        {
+                            "key": "field_builder_hero_text",
+                            "label": "Text under the title",
+                            "name": "text",
+                            "type": "textarea",
+                            "rows": 4,
+                            "new_lines": "",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_hero"
+                        },
+                        {
+                            "key": "field_builder_hero_anchor",
+                            "label": "Anchor",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Id for menu links: faq → /#faq. Latin letters, digits and dashes.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_hero"
+                        },
+                        {
+                            "key": "field_builder_hero_hidden",
+                            "label": "Hide this block",
+                            "name": "hidden",
+                            "type": "true_false",
+                            "ui": 1,
+                            "default_value": 0,
+                            "instructions": "A hidden block keeps its content but isn't shown on the site.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_hero"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_loan_options": {
+                    "key": "layout_loan_options",
+                    "name": "loan_options",
+                    "label": "Loan options (cards)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_builder_loan_options_overline",
+                            "label": "Eyebrow label",
+                            "name": "overline",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_loan_options"
+                        },
+                        {
+                            "key": "field_builder_loan_options_title",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_loan_options"
+                        },
+                        {
+                            "key": "field_builder_loan_options_cards",
+                            "label": "Cards",
+                            "name": "cards",
+                            "type": "repeater",
+                            "button_label": "Add card",
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_builder_loan_options_cards_image",
+                                    "label": "Image",
+                                    "name": "image",
+                                    "type": "image",
+                                    "return_format": "id",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_loan_options_cards"
+                                },
+                                {
+                                    "key": "field_builder_loan_options_cards_title",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_loan_options_cards"
+                                },
+                                {
+                                    "key": "field_builder_loan_options_cards_text",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "type": "textarea",
+                                    "rows": 2,
+                                    "new_lines": "",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_loan_options_cards"
+                                }
+                            ],
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_loan_options"
+                        },
+                        {
+                            "key": "field_builder_loan_options_anchor",
+                            "label": "Anchor",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Id for menu links: faq → /#faq. Latin letters, digits and dashes.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_loan_options"
+                        },
+                        {
+                            "key": "field_builder_loan_options_hidden",
+                            "label": "Hide this block",
+                            "name": "hidden",
+                            "type": "true_false",
+                            "ui": 1,
+                            "default_value": 0,
+                            "instructions": "A hidden block keeps its content but isn't shown on the site.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_loan_options"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_steps": {
+                    "key": "layout_steps",
+                    "name": "steps",
+                    "label": "Steps",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_builder_steps_overline",
+                            "label": "Eyebrow label",
+                            "name": "overline",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_steps"
+                        },
+                        {
+                            "key": "field_builder_steps_title",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_steps"
+                        },
+                        {
+                            "key": "field_builder_steps_items",
+                            "label": "Steps",
+                            "name": "items",
+                            "type": "repeater",
+                            "button_label": "Add step",
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_builder_steps_items_image",
+                                    "label": "Image",
+                                    "name": "image",
+                                    "type": "image",
+                                    "return_format": "id",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_steps_items"
+                                },
+                                {
+                                    "key": "field_builder_steps_items_title",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "type": "text",
+                                    "instructions": "The number (01, 02…) is added automatically.",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_steps_items"
+                                },
+                                {
+                                    "key": "field_builder_steps_items_text",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "type": "textarea",
+                                    "rows": 4,
+                                    "new_lines": "",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_steps_items"
+                                }
+                            ],
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_steps"
+                        },
+                        {
+                            "key": "field_builder_steps_anchor",
+                            "label": "Anchor",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Id for menu links: faq → /#faq. Latin letters, digits and dashes.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_steps"
+                        },
+                        {
+                            "key": "field_builder_steps_hidden",
+                            "label": "Hide this block",
+                            "name": "hidden",
+                            "type": "true_false",
+                            "ui": 1,
+                            "default_value": 0,
+                            "instructions": "A hidden block keeps its content but isn't shown on the site.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_steps"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_how_it_works": {
+                    "key": "layout_how_it_works",
+                    "name": "how_it_works",
+                    "label": "How it works",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_builder_how_it_works_overline",
+                            "label": "Eyebrow label",
+                            "name": "overline",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_how_it_works"
+                        },
+                        {
+                            "key": "field_builder_how_it_works_title",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_how_it_works"
+                        },
+                        {
+                            "key": "field_builder_how_it_works_subtitle",
+                            "label": "Subtitle",
+                            "name": "subtitle",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": "",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_how_it_works"
+                        },
+                        {
+                            "key": "field_builder_how_it_works_image_mobile",
+                            "label": "Image (mobile)",
+                            "name": "image_mobile",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_how_it_works"
+                        },
+                        {
+                            "key": "field_builder_how_it_works_image_desktop",
+                            "label": "Image (desktop)",
+                            "name": "image_desktop",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_how_it_works"
+                        },
+                        {
+                            "key": "field_builder_how_it_works_notes",
+                            "label": "Notes next to the image",
+                            "name": "notes",
+                            "type": "repeater",
+                            "button_label": "Add",
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_builder_how_it_works_notes_text",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "type": "wysiwyg",
+                                    "tabs": "all",
+                                    "toolbar": "inline",
+                                    "media_upload": 0,
+                                    "delay": 0,
+                                    "instructions": "Bold text is shown in the dark color.",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_how_it_works_notes"
+                                }
+                            ],
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_how_it_works"
+                        },
+                        {
+                            "key": "field_builder_how_it_works_components_title",
+                            "label": "Title on the right",
+                            "name": "components_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_how_it_works"
+                        },
+                        {
+                            "key": "field_builder_how_it_works_components",
+                            "label": "Cost components",
+                            "name": "components",
+                            "type": "repeater",
+                            "button_label": "Add",
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_builder_how_it_works_components_icon",
+                                    "label": "Icon",
+                                    "name": "icon",
+                                    "type": "select",
+                                    "choices": {
+                                        "lock": "Lock",
+                                        "check-circle": "Check in circle",
+                                        "shield-outline": "Shield (outline)",
+                                        "shield": "Shield (color)",
+                                        "percent": "Percent",
+                                        "dollar-sign": "Dollar",
+                                        "banknote": "Banknote",
+                                        "info": "Info",
+                                        "help-circle": "Question",
+                                        "mail": "Envelope",
+                                        "email-filled": "Envelope (filled)",
+                                        "time-filled": "Clock",
+                                        "location-pin-filled": "Map pin",
+                                        "triangle-right": "Triangle",
+                                        "arrow-right": "Arrow"
+                                    },
+                                    "return_format": "value",
+                                    "ui": 0,
+                                    "allow_null": 0,
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_how_it_works_components"
+                                },
+                                {
+                                    "key": "field_builder_how_it_works_components_text",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "type": "wysiwyg",
+                                    "tabs": "all",
+                                    "toolbar": "inline",
+                                    "media_upload": 0,
+                                    "delay": 0,
+                                    "instructions": "Bold text is shown in the dark color.",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_how_it_works_components"
+                                }
+                            ],
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_how_it_works"
+                        },
+                        {
+                            "key": "field_builder_how_it_works_anchor",
+                            "label": "Anchor",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Id for menu links: faq → /#faq. Latin letters, digits and dashes.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_how_it_works"
+                        },
+                        {
+                            "key": "field_builder_how_it_works_hidden",
+                            "label": "Hide this block",
+                            "name": "hidden",
+                            "type": "true_false",
+                            "ui": 1,
+                            "default_value": 0,
+                            "instructions": "A hidden block keeps its content but isn't shown on the site.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_how_it_works"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_rates": {
+                    "key": "layout_rates",
+                    "name": "rates",
+                    "label": "Rates table",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_builder_rates_title",
+                            "label": "Table title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_rates"
+                        },
+                        {
+                            "key": "field_builder_rates_msg2",
+                            "label": "",
+                            "name": "",
+                            "type": "message",
+                            "message": "Column headings: press Enter to move the rest to a second line.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0,
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_rates"
+                        },
+                        {
+                            "key": "field_builder_rates_col_amount",
+                            "label": "Column 1",
+                            "name": "col_amount",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": "",
+                            "wrapper": {
+                                "width": "20"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_rates"
+                        },
+                        {
+                            "key": "field_builder_rates_col_fee",
+                            "label": "Column 2",
+                            "name": "col_fee",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": "",
+                            "wrapper": {
+                                "width": "20"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_rates"
+                        },
+                        {
+                            "key": "field_builder_rates_col_apr",
+                            "label": "Column 3",
+                            "name": "col_apr",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": "",
+                            "wrapper": {
+                                "width": "20"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_rates"
+                        },
+                        {
+                            "key": "field_builder_rates_col_term",
+                            "label": "Column 4",
+                            "name": "col_term",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": "",
+                            "wrapper": {
+                                "width": "20"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_rates"
+                        },
+                        {
+                            "key": "field_builder_rates_col_total",
+                            "label": "Column 5",
+                            "name": "col_total",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": "",
+                            "wrapper": {
+                                "width": "20"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_rates"
+                        },
+                        {
+                            "key": "field_builder_rates_rows",
+                            "label": "Table rows",
+                            "name": "rows",
+                            "type": "repeater",
+                            "button_label": "Add row",
+                            "layout": "table",
+                            "sub_fields": [
+                                {
+                                    "key": "field_builder_rates_rows_amount",
+                                    "label": "Amount",
+                                    "name": "amount",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_rates_rows"
+                                },
+                                {
+                                    "key": "field_builder_rates_rows_fee",
+                                    "label": "CAB fee",
+                                    "name": "fee",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_rates_rows"
+                                },
+                                {
+                                    "key": "field_builder_rates_rows_apr",
+                                    "label": "Interest",
+                                    "name": "apr",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_rates_rows"
+                                },
+                                {
+                                    "key": "field_builder_rates_rows_term",
+                                    "label": "Term",
+                                    "name": "term",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_rates_rows"
+                                },
+                                {
+                                    "key": "field_builder_rates_rows_total",
+                                    "label": "Total repayment",
+                                    "name": "total",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_rates_rows"
+                                }
+                            ],
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_rates"
+                        },
+                        {
+                            "key": "field_builder_rates_note",
+                            "label": "Note under the table",
+                            "name": "note",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": "",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_rates"
+                        },
+                        {
+                            "key": "field_builder_rates_anchor",
+                            "label": "Anchor",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Id for menu links: faq → /#faq. Latin letters, digits and dashes.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_rates"
+                        },
+                        {
+                            "key": "field_builder_rates_hidden",
+                            "label": "Hide this block",
+                            "name": "hidden",
+                            "type": "true_false",
+                            "ui": 1,
+                            "default_value": 0,
+                            "instructions": "A hidden block keeps its content but isn't shown on the site.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_rates"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_eligibility": {
+                    "key": "layout_eligibility",
+                    "name": "eligibility",
+                    "label": "Eligibility",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_builder_eligibility_overline",
+                            "label": "Eyebrow label",
+                            "name": "overline",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_eligibility"
+                        },
+                        {
+                            "key": "field_builder_eligibility_title",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_eligibility"
+                        },
+                        {
+                            "key": "field_builder_eligibility_subtitle",
+                            "label": "Subtitle",
+                            "name": "subtitle",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": "",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_eligibility"
+                        },
+                        {
+                            "key": "field_builder_eligibility_card_title",
+                            "label": "Card title",
+                            "name": "card_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_eligibility"
+                        },
+                        {
+                            "key": "field_builder_eligibility_items",
+                            "label": "Requirements",
+                            "name": "items",
+                            "type": "repeater",
+                            "button_label": "Add",
+                            "layout": "table",
+                            "sub_fields": [
+                                {
+                                    "key": "field_builder_eligibility_items_text",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_eligibility_items"
+                                }
+                            ],
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_eligibility"
+                        },
+                        {
+                            "key": "field_builder_eligibility_note",
+                            "label": "Text under the list",
+                            "name": "note",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": "",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_eligibility"
+                        },
+                        {
+                            "key": "field_builder_eligibility_image",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_eligibility"
+                        },
+                        {
+                            "key": "field_builder_eligibility_anchor",
+                            "label": "Anchor",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Id for menu links: faq → /#faq. Latin letters, digits and dashes.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_eligibility"
+                        },
+                        {
+                            "key": "field_builder_eligibility_hidden",
+                            "label": "Hide this block",
+                            "name": "hidden",
+                            "type": "true_false",
+                            "ui": 1,
+                            "default_value": 0,
+                            "instructions": "A hidden block keeps its content but isn't shown on the site.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_eligibility"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_regulations": {
+                    "key": "layout_regulations",
+                    "name": "regulations",
+                    "label": "Regulations (image collage)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_builder_regulations_overline",
+                            "label": "Eyebrow label",
+                            "name": "overline",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_regulations"
+                        },
+                        {
+                            "key": "field_builder_regulations_title",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_regulations"
+                        },
+                        {
+                            "key": "field_builder_regulations_subtitle",
+                            "label": "Subtitle",
+                            "name": "subtitle",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": "",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_regulations"
+                        },
+                        {
+                            "key": "field_builder_regulations_main_image",
+                            "label": "Large card: image",
+                            "name": "main_image",
+                            "type": "image",
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_regulations"
+                        },
+                        {
+                            "key": "field_builder_regulations_main_text",
+                            "label": "Large card: text",
+                            "name": "main_text",
+                            "type": "textarea",
+                            "rows": 3,
+                            "new_lines": "",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_regulations"
+                        },
+                        {
+                            "key": "field_builder_regulations_cards",
+                            "label": "Cards on the right",
+                            "name": "cards",
+                            "type": "repeater",
+                            "button_label": "Add card",
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_builder_regulations_cards_image",
+                                    "label": "Image",
+                                    "name": "image",
+                                    "type": "image",
+                                    "return_format": "id",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_regulations_cards"
+                                },
+                                {
+                                    "key": "field_builder_regulations_cards_title",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_regulations_cards"
+                                },
+                                {
+                                    "key": "field_builder_regulations_cards_text",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "type": "textarea",
+                                    "rows": 3,
+                                    "new_lines": "",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_regulations_cards"
+                                }
+                            ],
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_regulations"
+                        },
+                        {
+                            "key": "field_builder_regulations_anchor",
+                            "label": "Anchor",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Id for menu links: faq → /#faq. Latin letters, digits and dashes.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_regulations"
+                        },
+                        {
+                            "key": "field_builder_regulations_hidden",
+                            "label": "Hide this block",
+                            "name": "hidden",
+                            "type": "true_false",
+                            "ui": 1,
+                            "default_value": 0,
+                            "instructions": "A hidden block keeps its content but isn't shown on the site.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_regulations"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_responsible": {
+                    "key": "layout_responsible",
+                    "name": "responsible",
+                    "label": "Callout",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_builder_responsible_overline",
+                            "label": "Eyebrow label",
+                            "name": "overline",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_responsible"
+                        },
+                        {
+                            "key": "field_builder_responsible_title",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_responsible"
+                        },
+                        {
+                            "key": "field_builder_responsible_subtitle",
+                            "label": "Subtitle",
+                            "name": "subtitle",
+                            "type": "textarea",
+                            "rows": 2,
+                            "new_lines": "",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_responsible"
+                        },
+                        {
+                            "key": "field_builder_responsible_note",
+                            "label": "Text in the callout",
+                            "name": "note",
+                            "type": "wysiwyg",
+                            "tabs": "all",
+                            "toolbar": "inline",
+                            "media_upload": 0,
+                            "delay": 0,
+                            "instructions": "Bold text is shown in semibold.",
+                            "required": 0,
+                            "parent_layout": "layout_responsible"
+                        },
+                        {
+                            "key": "field_builder_responsible_anchor",
+                            "label": "Anchor",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Id for menu links: faq → /#faq. Latin letters, digits and dashes.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_responsible"
+                        },
+                        {
+                            "key": "field_builder_responsible_hidden",
+                            "label": "Hide this block",
+                            "name": "hidden",
+                            "type": "true_false",
+                            "ui": 1,
+                            "default_value": 0,
+                            "instructions": "A hidden block keeps its content but isn't shown on the site.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_responsible"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_faq": {
+                    "key": "layout_faq",
+                    "name": "faq",
+                    "label": "FAQ",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_builder_faq_overline",
+                            "label": "Eyebrow label",
+                            "name": "overline",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_faq"
+                        },
+                        {
+                            "key": "field_builder_faq_title",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_faq"
+                        },
+                        {
+                            "key": "field_builder_faq_items",
+                            "label": "Questions",
+                            "name": "items",
+                            "type": "repeater",
+                            "button_label": "Add question",
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_builder_faq_items_question",
+                                    "label": "Question",
+                                    "name": "question",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_faq_items"
+                                },
+                                {
+                                    "key": "field_builder_faq_items_answer",
+                                    "label": "Answer",
+                                    "name": "answer",
+                                    "type": "wysiwyg",
+                                    "tabs": "all",
+                                    "toolbar": "inline",
+                                    "media_upload": 0,
+                                    "delay": 0,
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_faq_items"
+                                }
+                            ],
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_faq"
+                        },
+                        {
+                            "key": "field_builder_faq_anchor",
+                            "label": "Anchor",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Id for menu links: faq → /#faq. Latin letters, digits and dashes.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_faq"
+                        },
+                        {
+                            "key": "field_builder_faq_hidden",
+                            "label": "Hide this block",
+                            "name": "hidden",
+                            "type": "true_false",
+                            "ui": 1,
+                            "default_value": 0,
+                            "instructions": "A hidden block keeps its content but isn't shown on the site.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_faq"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_contacts": {
+                    "key": "layout_contacts",
+                    "name": "contacts",
+                    "label": "Contacts and contact form",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_builder_contacts_title",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_contacts"
+                        },
+                        {
+                            "key": "field_builder_contacts_hours",
+                            "label": "Opening hours",
+                            "name": "hours",
+                            "type": "repeater",
+                            "button_label": "Add",
+                            "layout": "table",
+                            "sub_fields": [
+                                {
+                                    "key": "field_builder_contacts_hours_days",
+                                    "label": "Days",
+                                    "name": "days",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_contacts_hours"
+                                },
+                                {
+                                    "key": "field_builder_contacts_hours_time",
+                                    "label": "Hours",
+                                    "name": "time",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_contacts_hours"
+                                }
+                            ],
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_contacts"
+                        },
+                        {
+                            "key": "field_builder_contacts_email_label",
+                            "label": "Email label",
+                            "name": "email_label",
+                            "type": "text",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_contacts"
+                        },
+                        {
+                            "key": "field_builder_contacts_email",
+                            "label": "Email",
+                            "name": "email",
+                            "type": "email",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_contacts"
+                        },
+                        {
+                            "key": "field_builder_contacts_address",
+                            "label": "Address",
+                            "name": "address",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_contacts"
+                        },
+                        {
+                            "key": "field_builder_contacts_form_title",
+                            "label": "Form title",
+                            "name": "form_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_contacts"
+                        },
+                        {
+                            "key": "field_builder_contacts_name_placeholder",
+                            "label": "Placeholder: name",
+                            "name": "name_placeholder",
+                            "type": "text",
+                            "wrapper": {
+                                "width": "33"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_contacts"
+                        },
+                        {
+                            "key": "field_builder_contacts_email_placeholder",
+                            "label": "Placeholder: email",
+                            "name": "email_placeholder",
+                            "type": "text",
+                            "wrapper": {
+                                "width": "33"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_contacts"
+                        },
+                        {
+                            "key": "field_builder_contacts_message_placeholder",
+                            "label": "Placeholder: message",
+                            "name": "message_placeholder",
+                            "type": "text",
+                            "wrapper": {
+                                "width": "33"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_contacts"
+                        },
+                        {
+                            "key": "field_builder_contacts_button_text",
+                            "label": "Button text",
+                            "name": "button_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_contacts"
+                        },
+                        {
+                            "key": "field_builder_contacts_anchor",
+                            "label": "Anchor",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Id for menu links: faq → /#faq. Latin letters, digits and dashes.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_contacts"
+                        },
+                        {
+                            "key": "field_builder_contacts_hidden",
+                            "label": "Hide this block",
+                            "name": "hidden",
+                            "type": "true_false",
+                            "ui": 1,
+                            "default_value": 0,
+                            "instructions": "A hidden block keeps its content but isn't shown on the site.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_contacts"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_text": {
+                    "key": "layout_text",
+                    "name": "text",
+                    "label": "Text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_builder_text_title",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "If empty, the page title is used.",
+                            "required": 0,
+                            "parent_layout": "layout_text"
+                        },
+                        {
+                            "key": "field_builder_text_content",
+                            "label": "Text",
+                            "name": "content",
+                            "type": "wysiwyg",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0,
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_text"
+                        },
+                        {
+                            "key": "field_builder_text_anchor",
+                            "label": "Anchor",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Id for menu links: faq → /#faq. Latin letters, digits and dashes.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_text"
+                        },
+                        {
+                            "key": "field_builder_text_hidden",
+                            "label": "Hide this block",
+                            "name": "hidden",
+                            "type": "true_false",
+                            "ui": 1,
+                            "default_value": 0,
+                            "instructions": "A hidden block keeps its content but isn't shown on the site.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_text"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_loan_form": {
+                    "key": "layout_loan_form",
+                    "name": "loan_form",
+                    "label": "Loan form (full screen)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_builder_loan_form_msg3",
+                            "label": "",
+                            "name": "",
+                            "type": "message",
+                            "message": "The list of benefits next to the form is edited in Site Settings → Get Started block.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0,
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_loan_form"
+                        },
+                        {
+                            "key": "field_builder_loan_form_title",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "If empty, the page title is used.",
+                            "required": 0,
+                            "parent_layout": "layout_loan_form"
+                        },
+                        {
+                            "key": "field_builder_loan_form_first_name_placeholder",
+                            "label": "Placeholder: first name",
+                            "name": "first_name_placeholder",
+                            "type": "text",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_loan_form"
+                        },
+                        {
+                            "key": "field_builder_loan_form_last_name_placeholder",
+                            "label": "Placeholder: last name",
+                            "name": "last_name_placeholder",
+                            "type": "text",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_loan_form"
+                        },
+                        {
+                            "key": "field_builder_loan_form_email_placeholder",
+                            "label": "Placeholder: email",
+                            "name": "email_placeholder",
+                            "type": "text",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_loan_form"
+                        },
+                        {
+                            "key": "field_builder_loan_form_amount_placeholder",
+                            "label": "Placeholder: amount",
+                            "name": "amount_placeholder",
+                            "type": "text",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_loan_form"
+                        },
+                        {
+                            "key": "field_builder_loan_form_button_text",
+                            "label": "Button text",
+                            "name": "button_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_loan_form"
+                        },
+                        {
+                            "key": "field_builder_loan_form_consent",
+                            "label": "Consent text under the button",
+                            "name": "consent",
+                            "type": "wysiwyg",
+                            "tabs": "all",
+                            "toolbar": "inline",
+                            "media_upload": 0,
+                            "delay": 0,
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_loan_form"
+                        },
+                        {
+                            "key": "field_builder_loan_form_anchor",
+                            "label": "Anchor",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Id for menu links: faq → /#faq. Latin letters, digits and dashes.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_loan_form"
+                        },
+                        {
+                            "key": "field_builder_loan_form_hidden",
+                            "label": "Hide this block",
+                            "name": "hidden",
+                            "type": "true_false",
+                            "ui": 1,
+                            "default_value": 0,
+                            "instructions": "A hidden block keeps its content but isn't shown on the site.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_loan_form"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_partner_form": {
+                    "key": "layout_partner_form",
+                    "name": "partner_form",
+                    "label": "Partner form (full screen)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_builder_partner_form_msg4",
+                            "label": "",
+                            "name": "",
+                            "type": "message",
+                            "message": "The list of benefits next to the form is edited in Site Settings → Get Started block.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0,
+                            "instructions": "",
+                            "required": 0,
+                            "parent_layout": "layout_partner_form"
+                        },
+                        {
+                            "key": "field_builder_partner_form_title",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "If empty, the page title is used.",
+                            "required": 0,
+                            "parent_layout": "layout_partner_form"
+                        },
+                        {
+                            "key": "field_builder_partner_form_widget",
+                            "label": "Widget code",
+                            "name": "widget",
+                            "type": "textarea",
+                            "rows": 8,
+                            "new_lines": "",
+                            "instructions": "HTML/JS code output as is in the empty column: on the right on desktop, at the top on mobile (for example, a partner form).",
+                            "required": 0,
+                            "parent_layout": "layout_partner_form"
+                        },
+                        {
+                            "key": "field_builder_partner_form_footer_code",
+                            "label": "Code before </body>",
+                            "name": "footer_code",
+                            "type": "textarea",
+                            "rows": 4,
+                            "new_lines": "",
+                            "instructions": "Scripts that must go right before the closing </body> tag (for example, the loader of the partner form). Output only on pages with this block.",
+                            "required": 0,
+                            "parent_layout": "layout_partner_form"
+                        },
+                        {
+                            "key": "field_builder_partner_form_anchor",
+                            "label": "Anchor",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Id for menu links: faq → /#faq. Latin letters, digits and dashes.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_partner_form"
+                        },
+                        {
+                            "key": "field_builder_partner_form_hidden",
+                            "label": "Hide this block",
+                            "name": "hidden",
+                            "type": "true_false",
+                            "ui": 1,
+                            "default_value": 0,
+                            "instructions": "A hidden block keeps its content but isn't shown on the site.",
+                            "wrapper": {
+                                "width": "50"
+                            },
+                            "required": 0,
+                            "parent_layout": "layout_partner_form"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "instructions": "",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1790337451
+}

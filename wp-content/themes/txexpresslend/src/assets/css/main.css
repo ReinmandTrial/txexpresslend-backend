@@ -1,0 +1,405 @@
+@import "../fonts/stylesheet.css";
+@import "tailwindcss";
+
+/* Look for Tailwind classes in the theme's PHP templates. */
+@source "../../../**/*.php";
+
+@theme {
+    --color-orange: #f2803d;
+    --color-orange-500: #ca703b;
+    --color-orange-600: #e58949;
+    --color-blue-body: #4a5757;
+    --color-dark: #17282a;
+    --color-blue: #2f4858;
+    --color-blue-lux: #2f4858;
+    --color-blue-light: #94a3b8;
+    --color-border-neutral: #e7e9e9;
+    --color-white-bg: #f8fcff;
+    --color-gray: #eaedf1;
+
+    --font-manrope: "Manrope", sans-serif;
+    --font-sora: "Sora", sans-serif;
+
+    --radius-10: 0.625rem;
+    --radius-20: 1.25rem;
+
+    --text-h1: 3rem;
+    --text-h1--line-height: 3.5rem;
+    --text-h1--font-weight: 700;
+
+    --text-h1-m: 2rem;
+    --text-h1-m--line-height: 2.625rem;
+    --text-h1-m--font-weight: 700;
+
+    --text-h2: 2rem;
+    --text-h2--line-height: 2.5rem;
+    --text-h2--font-weight: 600;
+
+    --text-h2-m: 1.625rem;
+    --text-h2-m--line-height: 2.125rem;
+    --text-h2-m--font-weight: 600;
+
+    --text-h3: 1.375rem;
+    --text-h3--line-height: 1.875rem;
+    --text-h3--font-weight: 600;
+
+    --text-h3-m: 1.25rem;
+    --text-h3-m--line-height: 1.75rem;
+    --text-h3-m--font-weight: 600;
+
+    --text-h4: 1.25rem;
+    --text-h4--line-height: 1.75rem;
+    --text-h4--font-weight: 600;
+
+    --text-h4-m: 1.125rem;
+    --text-h4-m--line-height: 1.5rem;
+    --text-h4-m--font-weight: 600;
+
+    --text-body: 1.0625rem;
+    --text-body--line-height: 1.6875rem;
+    --text-body--font-weight: 400;
+
+    --text-body-large: 1.125rem;
+    --text-body-large--line-height: 1.75rem;
+    --text-body-large--font-weight: 400;
+
+    --text-body-semibold: 1.0625rem;
+    --text-body-semibold--line-height: 1.625rem;
+    --text-body-semibold--font-weight: 600;
+
+    --text-body-small: 0.9375rem;
+    --text-body-small--line-height: 1.5rem;
+    --text-body-small--font-weight: 400;
+
+    --text-button: 1.125rem;
+    --text-button--line-height: 1.5rem;
+    --text-button--font-weight: 700;
+
+    --text-caption: 0.75rem;
+    --text-caption--line-height: 1.125rem;
+    --text-caption--font-weight: 400;
+
+    --text-overline: 0.75rem;
+    --text-overline--line-height: 1.125rem;
+    --text-overline--font-weight: 600;
+
+    --text-label: 0.875rem;
+    --text-label--line-height: 1.25rem;
+    --text-label--font-weight: 500;
+
+    --text-display: 2.5rem;
+    --text-display--line-height: 3.25rem;
+    --text-display--letter-spacing: -0.3px;
+    --text-display--font-weight: 600;
+
+    --text-display-m: 1.875rem;
+    --text-display-m--line-height: 2.375rem;
+    --text-display-m--letter-spacing: -0.2px;
+    --text-display-m--font-weight: 600;
+}
+
+@utility t-h1 {
+    @apply text-h1 font-sora;
+}
+
+@utility t-h1-m {
+    @apply text-h1-m font-sora;
+}
+
+@utility t-h2 {
+    @apply text-h2 font-sora;
+}
+
+@utility t-h2-m {
+    @apply text-h2-m font-sora;
+}
+
+@utility t-h3 {
+    @apply text-h3 font-sora;
+}
+
+@utility t-h3-m {
+    @apply text-h3-m font-sora;
+}
+
+@utility t-h4 {
+    @apply text-h4 font-sora;
+}
+
+@utility t-h4-m {
+    @apply text-h4-m font-sora;
+}
+
+@utility t-body {
+    @apply text-body;
+}
+
+@utility t-body-large {
+    @apply text-body-large;
+}
+
+@utility t-body-semibold {
+    @apply text-body-semibold;
+}
+
+@utility t-body-small {
+    @apply text-body-small;
+}
+
+@utility t-button {
+    @apply text-button;
+}
+
+@utility t-caption {
+    @apply text-caption;
+}
+
+@utility t-overline {
+    @apply text-overline uppercase;
+}
+
+@utility t-label {
+    @apply text-label;
+}
+
+@utility t-display {
+    @apply text-display font-sora;
+}
+
+@utility t-display-m {
+    @apply text-display-m font-sora;
+}
+
+@layer base {
+    body {
+        @apply font-manrope text-blue-body;
+    }
+    html {
+        @apply overflow-x-hidden;
+    }
+
+    /* Menu anchors (/#faq) must not end up hidden under the sticky header. */
+    [id] {
+        scroll-margin-top: 6rem;
+    }
+}
+
+@utility btn-orange-base {
+    @apply t-button text-white bg-orange text-center rounded-10 px-8 py-4.5 shadow-[0px_4px_12px_0px_#00000014] hover:bg-orange-500 transition-colors duration-300;
+}
+
+@utility ui-input {
+    @apply relative;
+    & > svg {
+        @apply size-3.5 text-blue-light absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none peer-disabled:text-gray;
+    }
+    & > input {
+        @apply w-full h-12 pl-10 pr-4 rounded-10 border border-blue-light t-label text-blue-lux placeholder:text-blue-light outline-none focus:border-blue-lux transition-colors duration-300 bg-white disabled:placeholder:text-gray disabled:border-gray;
+    }
+}
+
+@utility ui-container {
+    @apply w-full max-w-360 mx-auto px-4 lg:px-10 2xl:px-20;
+}
+
+@utility ui-overline {
+    @apply rounded-full py-1.5 px-5 bg-[#007FD112] t-overline text-blue-lux w-fit mx-auto;
+}
+
+@utility loan-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 1.25rem;
+    background: transparent;
+    cursor: pointer;
+
+    &::-webkit-slider-runnable-track {
+        height: 0.375rem;
+        border-radius: 9999px;
+        background: linear-gradient(
+            to right,
+            var(--color-blue-lux) 0,
+            var(--color-blue-lux) var(--range-progress, 0%),
+            #d8dedf var(--range-progress, 0%),
+            #d8dedf 100%
+        );
+    }
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        /* (track height - thumb height) / 2 */
+        margin-top: -0.4375rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        border: 3px solid var(--color-blue-lux);
+        border-radius: 9999px;
+        background: #fff;
+        box-shadow: 0 1px 4px 0 #17282a29;
+        transition: transform 0.2s ease;
+    }
+
+    &::-moz-range-track {
+        height: 0.375rem;
+        border-radius: 9999px;
+        background: #d8dedf;
+    }
+
+    &::-moz-range-progress {
+        height: 0.375rem;
+        border-radius: 9999px;
+        background: var(--color-dark);
+    }
+
+    &::-moz-range-thumb {
+        box-sizing: border-box;
+        width: 1.25rem;
+        height: 1.25rem;
+        border: 3px solid var(--color-dark);
+        border-radius: 9999px;
+        background: #fff;
+        box-shadow: 0 1px 4px 0 #17282a29;
+        transition: transform 0.2s ease;
+    }
+
+    &:hover::-webkit-slider-thumb {
+        transform: scale(1.08);
+    }
+
+    &:hover::-moz-range-thumb {
+        transform: scale(1.08);
+    }
+
+    &:focus-visible {
+        outline: none;
+    }
+
+    &:focus-visible::-webkit-slider-thumb {
+        box-shadow: 0 0 0 4px #f2803d40;
+    }
+
+    &:focus-visible::-moz-range-thumb {
+        box-shadow: 0 0 0 4px #f2803d40;
+    }
+}
+
+/*
+ * Text page typography.
+ * Styles hang off the container rather than the tags: content comes from
+ * the WP editor, where h2/p/ul can't get classes.
+ */
+@utility ui-content {
+    @apply t-body-small lg:t-body text-blue-body;
+
+    /* Text lives in a 700px column; headings are wider, the full 760px. */
+    & > * {
+        @apply max-w-175;
+    }
+
+    & > h2,
+    & > h3,
+    & > h4 {
+        @apply max-w-none;
+    }
+
+    /* Base rhythm between blocks; headings override it below. */
+    & > * + * {
+        @apply mt-6;
+    }
+
+    & > h2 {
+        @apply mt-12 lg:mt-16;
+    }
+
+    & > h3 {
+        @apply mt-8 lg:mt-10;
+    }
+
+    & h2 {
+        @apply t-h2-m lg:t-h2 text-dark;
+    }
+
+    & h3 {
+        @apply t-h3-m lg:t-h3 text-dark;
+    }
+
+    & h4 {
+        @apply t-h4-m lg:t-h4 text-dark;
+    }
+
+    & ul {
+        @apply list-disc pl-5;
+    }
+
+    & ol {
+        @apply list-decimal pl-5;
+    }
+
+    & li + li {
+        @apply mt-2;
+    }
+
+    & li > ul,
+    & li > ol {
+        @apply mt-2;
+    }
+
+    & li::marker {
+        @apply text-blue-light;
+    }
+
+    & a {
+        @apply text-orange underline underline-offset-2 transition-colors duration-300 hover:text-orange-500;
+    }
+
+    & strong,
+    & b {
+        @apply font-semibold text-dark;
+    }
+
+    & blockquote {
+        @apply border-l-2 border-orange pl-5 text-dark;
+    }
+
+    & img {
+        @apply rounded-xl;
+    }
+
+    & hr {
+        @apply border-border-neutral;
+    }
+
+    & table {
+        @apply w-full text-left border-collapse;
+    }
+
+    & th,
+    & td {
+        @apply border border-border-neutral px-4 py-2.5;
+    }
+
+    & th {
+        @apply font-semibold text-dark;
+    }
+}
+
+/*
+ * When an admin is logged in, the WP toolbar sits at the top. Move the sticky header below it.
+ * Outside of layers, otherwise the top-0 utility from the markup would win.
+ * On narrow screens the WP toolbar isn't fixed, so the header stays in place.
+ */
+.admin-bar > header {
+    top: var(--wp-admin--admin-bar--height, 0px);
+}
+
+@media (max-width: 600px) {
+    .admin-bar > header {
+        top: 0;
+    }
+}
+
+/* A field that failed server-side validation (see txl_invalid() in inc/forms.php). */
+[aria-invalid="true"] {
+    border-color: var(--color-orange);
+}

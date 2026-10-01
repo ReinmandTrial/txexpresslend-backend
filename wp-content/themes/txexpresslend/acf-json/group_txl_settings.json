@@ -1,0 +1,552 @@
+{
+    "key": "group_txl_settings",
+    "title": "Site Settings",
+    "fields": [
+        {
+            "key": "field_settings_tab1",
+            "label": "Header",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_header_logo",
+            "label": "Logo",
+            "name": "header_logo",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "If empty, the default logo from the theme is used.",
+            "required": 0
+        },
+        {
+            "key": "field_settings_header_cta_text",
+            "label": "Header button text",
+            "name": "header_cta_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_loan_form_page",
+            "label": "Loan form page",
+            "name": "loan_form_page",
+            "type": "post_object",
+            "post_type": [
+                "page"
+            ],
+            "return_format": "id",
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 1,
+            "instructions": "Where the \"Get started\" buttons and the Quick Loan form lead. If empty, the first page with a \"Loan form\" block is used.",
+            "required": 0
+        },
+        {
+            "key": "field_settings_tab2",
+            "label": "Hero",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_msg1",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "message": "Shared texts of the Hero with Quick Loan block. A Hero block on a page can override the title and the text; whatever is left empty there comes from here.",
+            "new_lines": "wpautop",
+            "esc_html": 0,
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_hero_title",
+            "label": "Title: beginning",
+            "name": "hero_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_hero_title_accent",
+            "label": "Title: highlighted part",
+            "name": "hero_title_accent",
+            "type": "text",
+            "instructions": "Shown in orange.",
+            "required": 0
+        },
+        {
+            "key": "field_settings_hero_title_after",
+            "label": "Title: ending",
+            "name": "hero_title_after",
+            "type": "text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_hero_text",
+            "label": "Text under the title",
+            "name": "hero_text",
+            "type": "textarea",
+            "rows": 4,
+            "new_lines": "",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_hero_stats",
+            "label": "Key figures under the text",
+            "name": "hero_stats",
+            "type": "repeater",
+            "button_label": "Add",
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_settings_hero_stats_label",
+                    "label": "Label",
+                    "name": "label",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "parent_repeater": "field_settings_hero_stats"
+                },
+                {
+                    "key": "field_settings_hero_stats_value",
+                    "label": "Value",
+                    "name": "value",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "parent_repeater": "field_settings_hero_stats"
+                }
+            ],
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_hero_form_title",
+            "label": "Form title",
+            "name": "hero_form_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_hero_amount_label",
+            "label": "Amount slider label",
+            "name": "hero_amount_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_hero_email_label",
+            "label": "Email field label",
+            "name": "hero_email_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_hero_email_placeholder",
+            "label": "Email field placeholder",
+            "name": "hero_email_placeholder",
+            "type": "text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_hero_button_text",
+            "label": "Button text",
+            "name": "hero_button_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_hero_badges",
+            "label": "Items under the form",
+            "name": "hero_badges",
+            "type": "repeater",
+            "button_label": "Add item",
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_settings_hero_badges_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "select",
+                    "choices": {
+                        "lock": "Lock",
+                        "check-circle": "Check in circle",
+                        "shield-outline": "Shield (outline)",
+                        "shield": "Shield (color)",
+                        "percent": "Percent",
+                        "dollar-sign": "Dollar",
+                        "banknote": "Banknote",
+                        "info": "Info",
+                        "help-circle": "Question",
+                        "mail": "Envelope",
+                        "email-filled": "Envelope (filled)",
+                        "time-filled": "Clock",
+                        "location-pin-filled": "Map pin",
+                        "triangle-right": "Triangle",
+                        "arrow-right": "Arrow"
+                    },
+                    "return_format": "value",
+                    "ui": 0,
+                    "allow_null": 0,
+                    "instructions": "",
+                    "required": 0,
+                    "parent_repeater": "field_settings_hero_badges"
+                },
+                {
+                    "key": "field_settings_hero_badges_text",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "parent_repeater": "field_settings_hero_badges"
+                }
+            ],
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_hero_image",
+            "label": "Illustration behind the form",
+            "name": "hero_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "Visible on desktop only.",
+            "required": 0
+        },
+        {
+            "key": "field_settings_tab3",
+            "label": "Loan amounts",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_msg2",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "message": "Used by the Quick Loan slider and the loan form dropdown.",
+            "new_lines": "wpautop",
+            "esc_html": 0,
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_amount_min",
+            "label": "Minimum, $",
+            "name": "amount_min",
+            "type": "number",
+            "min": 0,
+            "step": 1,
+            "wrapper": {
+                "width": "25"
+            },
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_amount_max",
+            "label": "Maximum, $",
+            "name": "amount_max",
+            "type": "number",
+            "min": 0,
+            "step": 1,
+            "wrapper": {
+                "width": "25"
+            },
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_amount_step",
+            "label": "Step, $",
+            "name": "amount_step",
+            "type": "number",
+            "min": 1,
+            "step": 1,
+            "wrapper": {
+                "width": "25"
+            },
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_amount_default",
+            "label": "Default, $",
+            "name": "amount_default",
+            "type": "number",
+            "min": 0,
+            "step": 1,
+            "wrapper": {
+                "width": "25"
+            },
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_tab4",
+            "label": "Get Started block",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_msg3",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "message": "List of benefits next to the \"Loan form\" and \"Partner form\" blocks.",
+            "new_lines": "wpautop",
+            "esc_html": 0,
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_benefits",
+            "label": "Benefits",
+            "name": "benefits",
+            "type": "repeater",
+            "button_label": "Add",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_settings_benefits_image",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "instructions": "",
+                    "required": 0,
+                    "parent_repeater": "field_settings_benefits"
+                },
+                {
+                    "key": "field_settings_benefits_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "textarea",
+                    "rows": 2,
+                    "new_lines": "",
+                    "instructions": "Press Enter for a line break.",
+                    "required": 0,
+                    "parent_repeater": "field_settings_benefits"
+                },
+                {
+                    "key": "field_settings_benefits_text",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "textarea",
+                    "rows": 3,
+                    "new_lines": "",
+                    "instructions": "",
+                    "required": 0,
+                    "parent_repeater": "field_settings_benefits"
+                }
+            ],
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_tab5",
+            "label": "Footer",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_msg4",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "message": "Links in the footer columns are edited in Appearance → Menus.",
+            "new_lines": "wpautop",
+            "esc_html": 0,
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_footer_title",
+            "label": "Name",
+            "name": "footer_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_footer_subtitle",
+            "label": "Tagline under the name",
+            "name": "footer_subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_footer_socials",
+            "label": "Social links",
+            "name": "footer_socials",
+            "type": "repeater",
+            "button_label": "Add",
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_settings_footer_socials_label",
+                    "label": "Text in the circle",
+                    "name": "label",
+                    "type": "text",
+                    "instructions": "For example, f or in",
+                    "required": 0,
+                    "parent_repeater": "field_settings_footer_socials"
+                },
+                {
+                    "key": "field_settings_footer_socials_url",
+                    "label": "Link",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "parent_repeater": "field_settings_footer_socials"
+                }
+            ],
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_footer_col1_title",
+            "label": "First column title",
+            "name": "footer_col1_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_footer_col2_title",
+            "label": "Second column title",
+            "name": "footer_col2_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_footer_disclaimer_title",
+            "label": "Disclaimer title",
+            "name": "footer_disclaimer_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_footer_disclaimer",
+            "label": "Disclaimer",
+            "name": "footer_disclaimer",
+            "type": "textarea",
+            "rows": 10,
+            "new_lines": "",
+            "instructions": "Press Enter for a line break.",
+            "required": 0
+        },
+        {
+            "key": "field_settings_footer_copyright",
+            "label": "Copyright",
+            "name": "footer_copyright",
+            "type": "text",
+            "instructions": "{year} is replaced with the current year.",
+            "required": 0
+        },
+        {
+            "key": "field_settings_tab6",
+            "label": "Forms",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0,
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_notify_email",
+            "label": "Send leads to",
+            "name": "notify_email",
+            "type": "email",
+            "instructions": "If empty, the administration email from Settings → General is used.",
+            "required": 0
+        },
+        {
+            "key": "field_settings_form_success_loan",
+            "label": "Message after the loan form is sent",
+            "name": "form_success_loan",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": "",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_form_success_contact",
+            "label": "Message after the contact form is sent",
+            "name": "form_success_contact",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": "",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_settings_form_error",
+            "label": "Error message",
+            "name": "form_error",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": "",
+            "instructions": "",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "txl-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1790337451
+}

@@ -1,0 +1,32 @@
+# WP core, plugins and uploads live in docker volumes and don't belong in git.
+# Everything in the repository is our own code:
+#   wp-content/themes/txexpresslend — the theme
+#   wp-content/mu-plugins           — code that runs regardless of the theme
+#   scripts                         — site installation and content
+
+# Theme build output and dependencies
+wp-content/themes/txexpresslend/node_modules/
+wp-content/themes/txexpresslend/dist/
+
+# In case WP ever gets installed right in the repository folder
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/index.php
+/xmlrpc.php
+/license.txt
+/readme.html
+wp-content/plugins/
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/languages/
+wp-content/debug.log
+
+# System
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.playwright-mcp/
+*.log
+.env

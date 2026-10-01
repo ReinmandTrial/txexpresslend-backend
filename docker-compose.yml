@@ -1,0 +1,79 @@
+# Local environment: WordPress + MySQL + Mailpit.
+#
+#   docker compose up -d                             — start the site (http://localhost:8080)
+#   docker compose run --rm cli sh /scripts/setup.sh — first-time install and content
+#   docker compose run --rm cli wp <command>         — any WP-CLI command
+#   docker compose down                              — stop (data is kept)
+#   docker compose down -v                           — stop and delete the database and WP core
+#
+# WP core lives in a docker volume; only our theme, mu-plugins and the setup
+# scripts are mounted from the repository.
+
+name: txexpresslend
+
+x-wp-env: &wp-env
+  WORDPRESS_DB_HOST: db
+  WORDPRESS_DB_NAME: wordpress
+  WORDPRESS_DB_USER: wordpress
+  WORDPRESS_DB_PASSWORD: wordpress
+  WORDPRESS_DEBUG: 1
+  WORDPRESS_CONFIG_EXTRA: |
+    define( 'WP_ENVIRONMENT_TYPE', 'local' );
+    define( 'WP_DEBUG_LOG', true );
+    define( 'DISALLOW_FILE_EDIT', true );
+
+x-wp-volumes: &wp-volumes
+  - wordpress:/var/www/html
+  - ./wp-content/themes/txexpresslend:/var/www/html/wp-content/themes/txexpresslend
+  - ./wp-content/mu-plugins:/var/www/html/wp-content/mu-plugins
+  - ./scripts:/scripts:ro
+
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  wordpress:
+    image: wordpress:php8.3-apache
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment: *wp-env
+    volumes: *wp-volumes
+
+  # WP-CLI. Runs only on demand: docker compose run --rm cli ...
+  # User 33 is www-data in the wordpress container; otherwise files uploaded
+  # through the CLI couldn't be overwritten by the site itself later.
+  cli:
+    image: wordpress:cli-php8.3
+    profiles: ["tools"]
+    user: "33:33"
+    depends_on:
+      - wordpress
+    environment:
+      <<: *wp-env
+      HOME: /tmp
+    volumes: *wp-volumes
+
+  # Mail catcher: everything the site sends shows up at http://localhost:8025
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - "8025:8025"
+
+volumes:
+  db:
+  wordpress:
