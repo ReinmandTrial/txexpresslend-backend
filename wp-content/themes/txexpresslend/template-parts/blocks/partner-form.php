@@ -34,7 +34,8 @@ if ( $txl_footer_code ) {
 	<div class="ui-container relative z-10 min-h-screen lg:grid lg:grid-cols-2">
 		<?php // lg:order-1 moves this column to the right on desktop; on mobile it comes first. ?>
 		<div
-			class="max-lg:bg-white-bg max-lg:-mx-4 max-lg:px-4 max-lg:min-h-screen flex flex-col justify-end py-33 lg:pt-10 lg:pb-30 lg:justify-center lg:order-1">
+			class="max-lg:bg-white-bg max-lg:-mx-4 max-lg:px-4 max-lg:min-h-screen flex flex-col justify-end py-33 lg:pt-10 lg:pb-30 lg:justify-center lg:order-1"
+			data-partner-widget>
 			<?php echo $args['widget']; // phpcs:ignore WordPress.Security.EscapeOutput -- widget code from an administrator. ?>
 		</div>
 

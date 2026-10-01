@@ -259,6 +259,39 @@ const initMobileMenu = () => {
 initMobileMenu();
 
 /*
+ * The partner form (Partner form block) draws itself inside a shadow DOM with a white
+ * background. Page CSS can't reach into a shadow DOM, so once the form appears we add our
+ * own style to it: the background becomes transparent and the column's color shows through.
+ */
+const PARTNER_WIDGET_STYLE = 'form { background: transparent !important; }';
+
+const initPartnerWidget = (container) => {
+    const styled = new WeakSet();
+
+    const apply = () => {
+        container.querySelectorAll('*').forEach((element) => {
+            const root = element.shadowRoot;
+
+            if (!root || styled.has(root)) return;
+
+            const style = document.createElement('style');
+            style.textContent = PARTNER_WIDGET_STYLE;
+            root.append(style);
+            styled.add(root);
+        });
+    };
+
+    // The widget loads asynchronously. attachShadow() doesn't notify the observer,
+    // so besides watching the DOM we also check for a while after the page loads.
+    new MutationObserver(apply).observe(container, { childList: true, subtree: true });
+    const timer = setInterval(apply, 500);
+    setTimeout(() => clearInterval(timer), 30000);
+    apply();
+};
+
+document.querySelectorAll('[data-partner-widget]').forEach(initPartnerWidget);
+
+/*
  * Time trap against bots: on submit a form reports how long the page has been open.
  * Bots submit instantly, and the server rejects anything faster than a couple of
  * seconds (see inc/forms.php). The field is filled here, not in PHP, so it works
