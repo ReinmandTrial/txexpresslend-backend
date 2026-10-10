@@ -158,6 +158,16 @@
                                     "instructions": "",
                                     "required": 0,
                                     "parent_repeater": "field_builder_loan_options_cards"
+                                },
+                                {
+                                    "key": "field_builder_loan_options_cards_link",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "type": "link",
+                                    "return_format": "array",
+                                    "instructions": "Where the card leads: a page of the site or any URL. Leave empty for a card without a link.",
+                                    "required": 0,
+                                    "parent_repeater": "field_builder_loan_options_cards"
                                 }
                             ],
                             "instructions": "",
@@ -1556,5 +1566,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1790337451
+    "modified": 1791662512
 }

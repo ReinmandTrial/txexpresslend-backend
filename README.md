@@ -133,6 +133,12 @@ Form blocks make sense once per page.
 - The **loan form** and the **contact form** are handled in `inc/forms.php`: anti-spam checks,
   server-side validation, the lead is saved under **Leads** and emailed to the address from
   Site Settings → Forms.
+- After the loan form the visitor goes on to the **partner form** (Site Settings → Forms →
+  Partner form page, or the first page with a Partner form block), as on txexpresslend.com:
+  `/apply/?first_name=…&last_name=…&email=…&requested_amount=…`. The partner's script reads
+  these parameters and fills in its own fields (`txl_continue_to_partner_form()`). Here the
+  data does end up in the URL: the partner form only takes it from there. If analytics gets
+  connected, turn on email redaction in GA4 (Admin → Data streams → Redact data).
 - Where to send leads next (CRM, lead network, API) hasn't been decided yet. The place for
   that is the `txl_deliver_lead()` function in `inc/forms.php`.
 

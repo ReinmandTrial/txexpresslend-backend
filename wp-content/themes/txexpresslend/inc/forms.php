@@ -9,7 +9,11 @@
  * 2. txl_handle_form() runs the anti-spam checks, validates the fields,
  *    saves the lead in the admin, sends an email and passes the lead on.
  * 3. It redirects back to the page with ?txl_status=sent|error, so reloading the
- *    page won't submit the form a second time.
+ *    page won't submit the form a second time. A sent loan form instead goes on to the
+ *    partner form with the visitor's data (txl_continue_to_partner_form()).
+ *
+ * The whole application flow, as on txexpresslend.com:
+ *   Quick Loan (hero) → loan form (/form) → partner form (/apply), each step prefilled.
  *
  * Why there's no WP nonce: a nonce protects logged-in users from CSRF, and an anonymous
  * lead form has no account to protect. For guests WP gives everyone the same nonce anyway,
@@ -21,7 +25,7 @@
  *   - rate limit — at most TXL_RATE_LIMIT leads per IP in 10 minutes.
  *
  * The Quick Loan form doesn't come here: it's a plain GET request that opens the
- * loan form (see template-parts/hero.php).
+ * loan form (see template-parts/blocks/hero.php).
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -116,6 +120,10 @@ function txl_handle_form(): void {
 	txl_notify( $form_id, $data, $return );
 	txl_deliver_lead( $form_id, $data, $lead_id );
 	txl_rate_limit_count();
+
+	if ( 'loan' === $form_id ) {
+		txl_continue_to_partner_form( $data );
+	}
 
 	txl_form_redirect( $return, $form_id, 'sent' );
 }
@@ -246,6 +254,30 @@ function txl_notify( string $form_id, array $data, string $page_url ): void {
  */
 function txl_deliver_lead( string $form_id, array $data, int $lead_id ): void {
 	do_action( 'txl_deliver_lead', $form_id, $data, $lead_id );
+}
+
+/**
+ * The loan form is the first step of the application: after it the visitor goes on to the
+ * partner form (Site Settings → Forms → Partner form page), the same way as on txexpresslend.com.
+ * The partner form reads these URL parameters and fills in its own fields with them.
+ * Without a partner form page this returns, and the loan form shows its success message.
+ */
+function txl_continue_to_partner_form( array $data ): void {
+	$url = txl_partner_form_url();
+
+	if ( ! $url ) {
+		return;
+	}
+
+	$params = array(
+		'first_name'       => $data['first-name'],
+		'last_name'        => $data['last-name'],
+		'email'            => $data['email'],
+		'requested_amount' => $data['amount'],
+	);
+
+	wp_safe_redirect( add_query_arg( array_map( 'rawurlencode', array_map( 'strval', $params ) ), $url ) );
+	exit;
 }
 
 function txl_form_redirect( string $url, string $form_id, string $status, string $token = '' ): void {

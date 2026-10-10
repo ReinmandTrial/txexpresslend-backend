@@ -492,6 +492,21 @@
             "required": 0
         },
         {
+            "key": "field_settings_apply_page",
+            "label": "Partner form page",
+            "name": "apply_page",
+            "type": "post_object",
+            "post_type": [
+                "page"
+            ],
+            "return_format": "id",
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 1,
+            "instructions": "After the loan form, the visitor is sent to this page, and the partner form there gets their name, email and amount. If empty, the first page with a \"Partner form\" block is used. If there is no such page, the loan form shows the success message instead.",
+            "required": 0
+        },
+        {
             "key": "field_settings_notify_email",
             "label": "Send leads to",
             "name": "notify_email",
@@ -548,5 +563,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1790337451
+    "modified": 1791662512
 }

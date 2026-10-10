@@ -145,6 +145,15 @@ function txl_loan_form_url(): string {
 }
 
 /**
+ * Page with the partner form: the loan form sends visitors there next. Null if there's none.
+ */
+function txl_partner_form_url(): ?string {
+	$id = (int) txl_option( 'apply_page' ) ?: txl_page_with_block( 'partner_form' );
+
+	return $id ? (string) get_permalink( $id ) : null;
+}
+
+/**
  * Top-level menu items for a location registered in register_nav_menus().
  *
  * wp_nav_menu() outputs its own <ul><li> markup, while in the design menus are

@@ -419,6 +419,7 @@ txl_seed_fields(
 		),
 		'footer_copyright'        => '© {year} TX Express Lend. All rights reserved.',
 
+		'apply_page'              => $apply,
 		'notify_email'            => '',
 		'form_success_loan'       => 'Thank you! Your request has been received. We will contact you by email shortly.',
 		'form_success_contact'    => 'Thank you for your message! We will get back to you soon.',
@@ -432,6 +433,13 @@ txl_seed_fields(
 // ---------------------------------------------------------------------------
 
 WP_CLI::log( 'Home page…' );
+
+// Value of a link field pointing to a page.
+$page_link = static fn( int $page ) => array(
+	'url'    => get_permalink( $page ),
+	'title'  => '',
+	'target' => '',
+);
 
 txl_seed_blocks(
 	$home,
@@ -447,21 +455,25 @@ txl_seed_blocks(
 					'image' => $img['credit'],
 					'title' => 'Instant',
 					'text'  => 'Get a fast response and move forward without unnecessary delays.',
+					'link'  => $page_link( $quick_pages['instant-texas-payday-loans'] ),
 				),
 				array(
 					'image' => $img['upi'],
 					'title' => 'Online',
 					'text'  => 'Apply from anywhere, anytime, with a simple online application.',
+					'link'  => $page_link( $quick_pages['online-texas-payday-loans'] ),
 				),
 				array(
 					'image' => $img['deposit'],
 					'title' => 'Bad Credit',
 					'text'  => 'Explore loan options even if your credit history isn’t perfect.',
+					'link'  => $page_link( $quick_pages['texas-payday-loans-with-bad-credit'] ),
 				),
 				array(
 					'image' => $img['tracker'],
 					'title' => 'No Credit Check',
 					'text'  => 'Find options that may not rely on a traditional credit check.',
+					'link'  => $page_link( $article ),
 				),
 			),
 		),

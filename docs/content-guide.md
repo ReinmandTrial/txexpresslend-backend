@@ -64,7 +64,7 @@ The header menu links to these anchors on the home page: `how-it-works`, `cab-tr
 | Block | What it is | Good to know |
 |---|---|---|
 | **Hero with Quick Loan** | Top section: heading, intro, key figures and the Quick Loan form | Only the heading and intro are edited in the block; everything else is in **Site Settings → Hero**. Leave the block's fields empty to use the shared texts. If you fill in any of the three title parts, all three are taken from the block. |
-| **Loan options (cards)** | Heading and a row of cards with an image | 4 cards fit in a row on desktop. |
+| **Loan options (cards)** | Heading and a row of cards with an image | 4 cards fit in a row on desktop. Each card has a **Link**: pick a page of the site or paste any URL, and the whole card becomes clickable. Leave it empty for a card without a link. |
 | **Steps** | Numbered steps with images on a light background | Numbers 01, 02… are added automatically. |
 | **How it works** | Image with notes, and cost components on the right | Separate images for mobile and desktop. |
 | **Rates table** | Table of example costs | In column headings press Enter to put the rest on a second line. On phones each row turns into a card. |
@@ -74,7 +74,7 @@ The header menu links to these anchors on the home page: `how-it-works`, `cab-tr
 | **FAQ** | Questions and answers | The first question is shown open. |
 | **Contacts and contact form** | Opening hours, email, address and the feedback form | Sits right under the previous block, without a gap. Submissions go to **Leads**. |
 | **Text** | An article: heading and text | If the heading is empty, the page title is used. |
-| **Loan form (full screen)** | The loan application form with the benefits list | Meant to be the only block on its page. Benefits are in **Site Settings → Get Started block**. |
+| **Loan form (full screen)** | The loan application form with the benefits list | Meant to be the only block on its page. Benefits are in **Site Settings → Get Started block**. After sending, the visitor goes on to the partner form (see "How the application works" below). |
 | **Partner form (full screen)** | An empty column for the partner's application form, with the benefits list | Paste the partner's code into **Widget code** and **Code before &lt;/body&gt;** exactly as received. Meant to be the only block on its page. |
 
 Rules of thumb:
@@ -114,7 +114,7 @@ Texts shared by all pages. Changes apply everywhere at once.
 | **Loan amounts** | Minimum, maximum, step and default amount for the Quick Loan slider and the loan form dropdown. |
 | **Get Started block** | The benefits list next to the Loan form and Partner form blocks. |
 | **Footer** | Name, tagline, social links, column titles, disclaimer, copyright (`{year}` becomes the current year). |
-| **Forms** | Where lead notifications are emailed, and the messages shown after a form is sent or fails. |
+| **Forms** | **Partner form page** (where the loan form sends visitors next), where lead notifications are emailed, and the messages shown after a form is sent or fails. |
 
 ---
 
@@ -133,7 +133,22 @@ Footer column titles are edited in **Site Settings → Footer**, not here.
 
 ---
 
-## 6. Leads
+## 6. How the application works
+
+The application takes three steps, as on txexpresslend.com. Each step fills in what the visitor
+already entered:
+
+1. **Quick Loan** in the Hero block: amount and email.
+2. **Loan form** (the page set in **Site Settings → Header → Loan form page**): first name, last name,
+   email and amount. The amount and email from step 1 are already filled in.
+3. **Partner form** (the page set in **Site Settings → Forms → Partner form page**): the partner's
+   application. It receives the name, email and amount from step 2.
+
+The loan form also saves the visitor's data under **Leads**, so you see everyone who got to step 3.
+If no partner form page is set and no page has a Partner form block, the loan form shows its success
+message instead.
+
+## 7. Leads
 
 **Leads** lists everything sent through the loan form and the contact form, newest first.
 
@@ -150,7 +165,7 @@ Leads hold personal data. Delete the ones you no longer need.
 
 ---
 
-## 7. Before the launch
+## 8. Before the launch
 
 - **Settings → Reading** → untick **Discourage search engines from indexing this site**. Until then
   the site is hidden from Google on purpose.
