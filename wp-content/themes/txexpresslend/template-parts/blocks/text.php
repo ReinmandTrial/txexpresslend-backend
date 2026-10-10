@@ -14,7 +14,7 @@ $txl_tag   = $args['h1'] ? 'h1' : 'h2';
 $txl_title = $args['title'] ?: get_the_title();
 ?>
 <div class="ui-container">
-	<article class="max-w-190">
+	<article class="max-w-230 mx-auto">
 		<<?php echo $txl_tag; // phpcs:ignore WordPress.Security.EscapeOutput -- only h1 or h2. ?> class="t-h2-m lg:t-display-m text-dark mb-6">
 			<?php echo esc_html( $txl_title ); ?>
 		</<?php echo $txl_tag; // phpcs:ignore WordPress.Security.EscapeOutput ?>>

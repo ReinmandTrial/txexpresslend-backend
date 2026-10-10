@@ -294,7 +294,7 @@
 
     /* Text lives in a 700px column; headings are wider, the full 760px. */
     & > * {
-        @apply max-w-175;
+        @apply max-w-230;
     }
 
     & > h2,
