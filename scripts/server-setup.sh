@@ -4,11 +4,13 @@
 # or simply re-applied.
 #
 # Runs on the server as root. From your machine (Git Bash):
-#   ssh -i <key> root@<server> 'DOMAIN=thexpresslend.pp.ua sh -s' < scripts/server-setup.sh
+#   ssh -i <key> root@<server> 'DOMAIN=txexpresslend.com EXTRA_DOMAINS=thexpresslend.pp.ua sh -s' < scripts/server-setup.sh
 #
 # DOMAIN: the site's domain. With it, nginx serves the site on the domain and its www,
 # redirects everything else there and gets an HTTPS certificate. The domain must already point
 # to the server. Without DOMAIN the site is served on the server's IP over plain HTTP.
+# EXTRA_DOMAINS: more domains (space-separated) that serve the same site as they are, without
+# a redirect; they and their www get into the same certificate.
 #
 # After it: upload the theme with scripts/deploy.sh and install the site with scripts/setup.sh
 # (see "Server" in README.md).
@@ -17,6 +19,7 @@ set -eu
 
 SITE_ROOT="${SITE_ROOT:-/var/www/txexpresslend}"
 DOMAIN="${DOMAIN:-}"
+EXTRA_DOMAINS="${EXTRA_DOMAINS:-}"
 CREDENTIALS=/root/.txexpresslend-db
 export DEBIAN_FRONTEND=noninteractive
 
@@ -106,6 +109,11 @@ EOF
 if [ -n "$DOMAIN" ]; then
 	# The site answers on the domain; requests by IP or for other names go to the domain.
 	SERVER_NAME="$DOMAIN www.$DOMAIN"
+	CERT_DOMAINS="-d $DOMAIN -d www.$DOMAIN"
+	for extra in $EXTRA_DOMAINS; do
+		SERVER_NAME="$SERVER_NAME $extra www.$extra"
+		CERT_DOMAINS="$CERT_DOMAINS -d $extra -d www.$extra"
+	done
 	CATCH_ALL="server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -176,7 +184,7 @@ if [ -n "$DOMAIN" ]; then
 	# Gets the certificate once and renews it automatically (certbot.timer). On re-runs it only
 	# puts the existing certificate back into the nginx config written above.
 	certbot --nginx --non-interactive --agree-tos --register-unsafely-without-email \
-		--keep-until-expiring --redirect -d "$DOMAIN" -d "www.$DOMAIN"
+		--keep-until-expiring --expand --redirect --cert-name "$DOMAIN" $CERT_DOMAINS
 fi
 
 echo "→ WordPress core"

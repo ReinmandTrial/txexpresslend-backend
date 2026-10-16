@@ -170,9 +170,11 @@ docker compose run --rm cli wp eval-file /scripts/seed.php --user=admin  # re-im
 
 ## Server
 
-The site runs at **https://thexpresslend.pp.ua** (DigitalOcean droplet `165.227.57.188`,
+The site runs at **https://txexpresslend.com** (DigitalOcean droplet `165.227.57.188`,
 Ubuntu 24.04, 1 vCPU, 512 MB RAM + 1 GB swap). No Docker there: nginx + PHP 8.3-FPM + MariaDB,
 tuned for the small server. Requests by IP, over HTTP and on `www` redirect to the main domain.
+The former staging domain `thexpresslend.pp.ua` is still served by nginx and is in the certificate,
+but it's the same WordPress, so WordPress itself sends its home page and admin to the main domain.
 
 | What | Where |
 |---|---|
@@ -208,11 +210,11 @@ cd /var/www/txexpresslend && sudo -u www-data env HOME=/tmp wp <command>
 
 ```bash
 # 1. System, database, nginx, HTTPS and WP core (the domain must already point to the server)
-ssh root@<server> 'DOMAIN=thexpresslend.pp.ua sh -s' < scripts/server-setup.sh
+ssh root@<server> 'DOMAIN=txexpresslend.com EXTRA_DOMAINS=thexpresslend.pp.ua sh -s' < scripts/server-setup.sh
 # 2. Theme, mu-plugins and scripts
 DEPLOY_HOST=root@<server> sh scripts/deploy.sh
 # 3. WordPress install and content
-ssh root@<server> "cd /var/www/txexpresslend && sudo -u www-data env HOME=/tmp   SITE_URL=https://thexpresslend.pp.ua ADMIN_PASSWORD=<password> WP_ROOT=/var/www/txexpresslend   sh /opt/txexpresslend/scripts/setup.sh"
+ssh root@<server> "cd /var/www/txexpresslend && sudo -u www-data env HOME=/tmp   SITE_URL=https://txexpresslend.com ADMIN_PASSWORD=<password> WP_ROOT=/var/www/txexpresslend   sh /opt/txexpresslend/scripts/setup.sh"
 ```
 
 ### Mail

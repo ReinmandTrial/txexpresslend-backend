@@ -3,7 +3,7 @@
 How to edit the TX Express Lend website in the WordPress admin: pages, shared texts, menus and
 form submissions. No coding needed.
 
-**Admin:** https://thexpresslend.pp.ua/wp-admin
+**Admin:** https://txexpresslend.com/wp-admin
 
 | I want to… | Go to |
 |---|---|
@@ -51,7 +51,7 @@ replace an image, hover over it and click the pencil, or remove it with the cros
 ### Anchors (links to a block)
 
 **Anchor** gives a block an address on the page, so a menu item can scroll to it. An anchor
-`faq` on the home page makes `https://thexpresslend.pp.ua/#faq` jump straight to that block.
+`faq` on the home page makes `https://txexpresslend.com/#faq` jump straight to that block.
 Use lowercase Latin letters, digits and dashes.
 
 The header menu links to these anchors on the home page: `how-it-works`, `cab-transparency`,
@@ -94,7 +94,7 @@ Rules of thumb:
 2. Type the title. It's shown in the browser tab and used as the heading of Text and form blocks
    when theirs are empty.
 3. Under the title, **Permalink → Edit** sets the address, e.g. `houston-payday-loans` →
-   `https://thexpresslend.pp.ua/houston-payday-loans/`. Lowercase Latin letters and dashes.
+   `https://txexpresslend.com/houston-payday-loans/`. Lowercase Latin letters and dashes.
 4. Add blocks. A typical article page is **Hero with Quick Loan** + **Text** (+ **FAQ**).
 5. **Publish.** To show the page in the footer or header, add it to a menu (section 5).
 
@@ -124,7 +124,7 @@ Texts shared by all pages. Changes apply everywhere at once.
 **Footer: Quick Links** (second column). Use **Select a menu to edit** to switch between them.
 
 - **Add a page** — tick it under **Pages** on the left → **Add to Menu**.
-- **Add a link to a block** — **Custom Links**: URL `https://thexpresslend.pp.ua/#faq`, any link text.
+- **Add a link to a block** — **Custom Links**: URL `https://txexpresslend.com/#faq`, any link text.
 - **Reorder** — drag items. Only top-level items are shown on the site; don't nest them.
 - **Rename** — open the item and change **Navigation Label**.
 - **Save Menu** when done.
